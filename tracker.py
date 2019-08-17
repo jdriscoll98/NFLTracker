@@ -94,12 +94,16 @@ for tr in tr_tbody:
     rank = int(td_tr[0].text)
     teams[team]['OL-Rank'] = rank
 
-def team_eff(abbrv, week):
+def team_eff(abbrv, week, at_home):
     team = teams[abbrv]
     passing = 10*team['pass_yds_per_att'][week]
     TO_diff = 10*team['TO_diff'][week]
     rank = team['OL-Rank']
-    return passing + TO_diff - rank
+    if at_home:
+        bonus = 5
+    else:
+        bonus = -5
+    return passing + TO_diff - rank + bonus
 
 def get_abbrv_2(team):
     if team == 'NO':
