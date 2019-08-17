@@ -1,0 +1,11 @@
+{% extends 'website/base.html' %}
+
+{% block title %}{{ block.super }} | Home Page {% endblock title %}
+
+{% block contents %}
+
+<p class="lead">This is the profile page.</p>
+
+<a class="btn btn-primary" href="{% url 'core:logout' %}" role="button">Logout</a>
+
+{% endblock contents %}

@@ -1,0 +1,13 @@
+{% extends 'website/base.html' %}
+
+{% block title %}{{ block.super }} | Home Page {% endblock title %}
+
+{% block contents %}
+
+<p class="lead">This is the home page.</p>
+
+<p class="lead">Click the button below to access the profile page.</p>
+
+<a class="btn btn-primary" href="{% url 'website:profile' %}" role="button">Profile</a>
+
+{% endblock contents %}
